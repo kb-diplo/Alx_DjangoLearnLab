@@ -1,0 +1,6 @@
+<h1>{{ post.title }}</h1>
+<p>By {{ post.author.username }} on {{ post.created_at }}</p>
+<div>{{ post.content }}</div>
+<a href="{% url 'post_edit' post.pk %}">Edit</a>
+<a href="{% url 'post_delete' post.pk %}">Delete</a>
+<a href="{% url 'post_list' %}">Back to List</a>
