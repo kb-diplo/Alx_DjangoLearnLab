@@ -70,6 +70,15 @@ CSP_IMG_SRC = ("'self'",)
 
 ROOT_URLCONF = 'LibraryProject.urls'
 
+# Secure cookies
+SESSION_COOKIE_SECURE = True  # Ensure session cookies are sent over HTTPS only
+CSRF_COOKIE_SECURE = True  # Ensure CSRF cookies are sent over HTTPS only
+
+# Secure headers
+X_FRAME_OPTIONS = 'DENY'  # Prevent clickjacking
+SECURE_CONTENT_TYPE_NOSNIFF = True  # Prevent MIME type sniffing
+SECURE_BROWSER_XSS_FILTER = True  # Enable XSS filter in browsers
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -87,6 +96,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'LibraryProject.wsgi.application'
+
+ALLOWED_HOSTS = ['yourdomain.com', 'localhost', '127.0.0.1']
 
 
 # Database
