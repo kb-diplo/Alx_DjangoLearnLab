@@ -1,7 +1,7 @@
 from django import forms
-from .models import Article
+from .models import Book
 
-class ArticleForm(forms.ModelForm):
+class BookForm(forms.ModelForm):
     class Meta:
-        model = Article
-        fields = ['title', 'content']
+        model = Book
+        fields = ['title', 'author', 'published_date']
