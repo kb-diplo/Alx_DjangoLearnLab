@@ -6,7 +6,7 @@ from .forms import BookForm
 @login_required
 @permission_required('bookshelf.can_view_book', raise_exception=True)
 def book_list(request):
-    books = Book.objects.all()
+    books = Book.objects.all() # Safe ORM query
     return render(request, 'bookshelf/book_list.html', {'books': books})
 
 @login_required
