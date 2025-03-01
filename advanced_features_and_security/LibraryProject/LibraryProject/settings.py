@@ -70,9 +70,25 @@ CSP_IMG_SRC = ("'self'",)
 
 ROOT_URLCONF = 'LibraryProject.urls'
 
+# Redirect all non-HTTPS requests to HTTPS
+SECURE_SSL_REDIRECT = True
+
+# Trust the X-Forwarded-Proto header (required when using a reverse proxy like we have Nginx)
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 # Secure cookies
 SESSION_COOKIE_SECURE = True  # Ensure session cookies are sent over HTTPS only
 CSRF_COOKIE_SECURE = True  # Ensure CSRF cookies are sent over HTTPS only
+
+# HSTS (HTTP Strict Transport Security)
+SECURE_HSTS_SECONDS = 31536000  # Enable HSTS for 1 year
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # Include subdomains in HSTS
+SECURE_HSTS_PRELOAD = True  # Allow preloading of HSTS policy
+
+
+SECURE_BROWSER_XSS_FILTER = True  # Enable XSS filter in browsers
+SECURE_CONTENT_TYPE_NOSNIFF = True  # Prevent MIME type sniffing
+X_FRAME_OPTIONS = 'DENY'  # Prevent clickjacking
 
 # Secure headers
 X_FRAME_OPTIONS = 'DENY'  # Prevent clickjacking
