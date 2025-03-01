@@ -50,3 +50,18 @@ def book_delete(request, pk):
         book.delete()
         return redirect('book_list')
     return render(request, 'bookshelf/book_confirm_delete.html', {'book': book})
+
+from django.shortcuts import render, redirect
+from .forms import ExampleForm
+
+def example_form_view(request):
+    if request.method == 'POST':
+        form = ExampleForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+            return redirect('book_list')  
+    else:
+        form = ExampleForm()
+    return render(request, 'bookshelf/example_form.html', {'form': form})
