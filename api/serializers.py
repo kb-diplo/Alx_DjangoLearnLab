@@ -1,4 +1,7 @@
 # BookSerializer: Serializes all fields of the Book model and validates the publication year.
+from rest_framework import serializers
+from .models import Book, Author
+
 class BookSerializer(serializers.ModelSerializer):
     class Meta:
         model = Book
