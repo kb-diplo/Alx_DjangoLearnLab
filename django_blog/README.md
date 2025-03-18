@@ -23,6 +23,12 @@ This is a Django-based blog application that includes user authentication and pr
 - **Edit a Comment**: Click the "Edit" link on a comment you authored.
 - **Delete a Comment**: Click the "Delete" link on a comment you authored.
 
+## Tagging and Search Functionality
+
+- **Add Tags**: When creating or updating a post, add tags to categorize it.
+- **Search**: Use the search bar to find posts by title, content, or tags.
+- **View Tagged Posts**: Click on a tag to view all posts with that tag.
+
 ## Installation
 
 1. Clone the repository:
