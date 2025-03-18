@@ -6,6 +6,7 @@ from .views import (
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('posts/', PostListView.as_view(), name='posts'),
     path('register/', views.register, name='register'),  # URL for user registration
     path('login/', views.user_login, name='login'),  # URL for user login
     path('logout/', views.user_logout, name='logout'),  # URL for user logout
