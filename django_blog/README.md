@@ -17,6 +17,12 @@ This is a Django-based blog application that includes user authentication and pr
 - **Edit Post**: Go to `/posts/<post_id>/edit/` to update a post (requires login and author permission).
 - **Delete Post**: Go to `/posts/<post_id>/delete/` to delete a post (requires login and author permission).
 
+## Comment Functionality
+
+- **Add a Comment**: Go to a blog post detail page and use the comment form.
+- **Edit a Comment**: Click the "Edit" link on a comment you authored.
+- **Delete a Comment**: Click the "Delete" link on a comment you authored.
+
 ## Installation
 
 1. Clone the repository:
